@@ -9,6 +9,8 @@ use Tests\TestCase;
 
 class ProjectTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -16,11 +18,7 @@ class ProjectTest extends TestCase
         $this->projects = factory(Project::class, 10)->create();
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+    /** @test */
     public function getAllProjects()
     {
         $response = $this->json('GET', 'api/projects');
