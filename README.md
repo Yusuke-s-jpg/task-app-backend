@@ -41,5 +41,6 @@ Build laravel development environment with docker-compose.
 
 ### テスト
 
-####　テスト実行
+#### テスト実行
+
 `docker-compose exec app vendor/bin/phpunit`
