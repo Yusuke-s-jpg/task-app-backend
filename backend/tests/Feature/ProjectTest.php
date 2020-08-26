@@ -16,6 +16,10 @@ class ProjectTest extends TestCase
     //     parent::setUp();
     // }
 
+    ///////////////////////
+    // index
+    ///////////////////////
+
     /** @test */
     public function getAllProjects()
     {
@@ -39,5 +43,31 @@ class ProjectTest extends TestCase
                         'user_id' => $this->projects[9]->user_id,
                     ]
                  );
+    }
+
+    ///////////////////////
+    // create
+    ///////////////////////
+
+    /** @test */
+    public function createProject()
+    {
+        $projectCount = Project::count();
+        $params = [
+            'title' => 'testTitle',
+            'description' => 'testDescription',
+            'state' => 'progress'
+        ];
+        $response = $this->json('POST', 'api/projects', $params);
+
+        $response->assertStatus(201)
+                 ->assertDatabaseHas('projects', [
+                    'title' => 'testTitle',
+                    'description' => 'testDescription',
+                    'state' => 'progress'
+                 ]);
+
+        // Check if the record is added
+        $this->assertSame(Project::count(), $projectCount + 1);
     }
 }
