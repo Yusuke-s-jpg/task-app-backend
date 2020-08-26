@@ -11,16 +11,15 @@ class ProjectTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->projects = factory(Project::class, 10)->create();
-    }
+    // protected function setUp(): void
+    // {
+    //     parent::setUp();
+    // }
 
     /** @test */
     public function getAllProjects()
     {
+        $this->projects = factory(Project::class, 10)->create();
         $response = $this->json('GET', 'api/projects');
 
         $response->assertStatus(200)
@@ -33,11 +32,11 @@ class ProjectTest extends TestCase
                          'user_id' => $this->projects[0]->user_id,
                      ],
                      [
-                        'id' => $this->projects[10]->id,
-                        'title' => $this->projects[10]->title,
-                        'description' => $this->projects[10]->description,
-                        'state' => $this->projects[10]->state,
-                        'user_id' => $this->projects[10]->user_id,
+                        'id' => $this->projects[9]->id,
+                        'title' => $this->projects[9]->title,
+                        'description' => $this->projects[9]->description,
+                        'state' => $this->projects[9]->state,
+                        'user_id' => $this->projects[9]->user_id,
                     ]
                  );
     }
