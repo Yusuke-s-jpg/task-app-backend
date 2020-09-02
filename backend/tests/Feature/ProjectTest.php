@@ -11,10 +11,10 @@ class ProjectTest extends TestCase
 {
     use RefreshDatabase;
 
-    // protected function setUp(): void
-    // {
-    //     parent::setUp();
-    // }
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
 
     ///////////////////////
     // index
@@ -44,9 +44,9 @@ class ProjectTest extends TestCase
                     ]
                  );
     }
-
+    
     ///////////////////////
-    // create
+    //  store
     ///////////////////////
 
     /** @test */
@@ -56,15 +56,17 @@ class ProjectTest extends TestCase
         $params = [
             'title' => 'testTitle',
             'description' => 'testDescription',
-            'state' => 'progress'
+            'state' => 'progress',
+            'user_id' => 1
         ];
         $response = $this->json('POST', 'api/projects', $params);
 
-        $response->assertStatus(201)
-                 ->assertDatabaseHas('projects', [
+        $response->assertStatus(201);
+        $this->assertDatabaseHas('projects', [
                     'title' => 'testTitle',
                     'description' => 'testDescription',
-                    'state' => 'progress'
+                    'state' => 'progress',
+                    'user_id' => 1
                  ]);
 
         // Check if the record is added
