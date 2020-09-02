@@ -44,3 +44,9 @@ Build laravel development environment with docker-compose.
 #### テスト実行
 
 `docker-compose exec app vendor/bin/phpunit`
+
+### DB
+
+#### DB 接続
+
+`docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'`
