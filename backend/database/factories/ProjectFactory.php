@@ -19,9 +19,9 @@ use Illuminate\Support\Str;
 
 $factory->define(Project::class, function (Faker $faker) {
     return [
-        'title' => $faker->title,
+        'title'       => $faker->title,
         'description' => $faker->realText,
-        'state' => 'progress',
-        'user_id' => 1,
+        'state'       => 'progress',
+        'user_id'     => 1,
     ];
 });
