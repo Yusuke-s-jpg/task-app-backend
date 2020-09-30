@@ -21,6 +21,7 @@ class ProjectTest extends TestCase
     ///////////////////////
 
     /** 
+     * 全プロジェクト取得
      * status:200
     */
     /** @test */
@@ -53,6 +54,7 @@ class ProjectTest extends TestCase
     ///////////////////////
 
     /** 
+     * 指定されたプロジェクトを一つ取得
      * status:200
     */
     /** @test */
@@ -75,6 +77,7 @@ class ProjectTest extends TestCase
     }
     
     /** 
+     * 存在しないプロジェクトを取得
      * status:404
     */
     /** @test */
@@ -101,6 +104,7 @@ class ProjectTest extends TestCase
     ///////////////////////
 
     /**
+     * 新しいプロジェクトを保存
      * status:201
      */
     /** @test */
@@ -132,6 +136,7 @@ class ProjectTest extends TestCase
     ///////////////////////
 
     /**
+     * プロジェクトを更新
      * status:200
      */
     /** @test */
@@ -178,6 +183,7 @@ class ProjectTest extends TestCase
     }
 
     /**
+     * 存在しないプロジェクトを更新
      * status:404
      */
     /** @test */
@@ -229,6 +235,7 @@ class ProjectTest extends TestCase
     ///////////////////////
 
     /** 
+     * プロジェクトを削除
      * status:200
     */
     /** @test */
@@ -254,6 +261,7 @@ class ProjectTest extends TestCase
     }
 
     /** 
+     * 存在しないプロジェクトを削除
      * status:404
     */
     /** @test */
