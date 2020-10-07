@@ -40,6 +40,9 @@ class ProjectController extends Controller
 
         try {
             $project->fill($request->all());
+            $project->state = 'progress';
+            // TODO　ユーザー機能作成後修正
+            $project->user_id = 1;
             $project->save();
 
             \DB::commit();
