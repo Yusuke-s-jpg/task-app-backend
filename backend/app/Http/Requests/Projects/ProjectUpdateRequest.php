@@ -26,8 +26,6 @@ class ProjectUpdateRequest extends FormRequest
         return [
             'title'       => 'string|required',
             'description' => 'string|nullable',
-            'state'       => 'string|required',
-            'user_id'     => 'integer|required'
         ];
     }
 }
