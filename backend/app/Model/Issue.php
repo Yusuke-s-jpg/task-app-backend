@@ -4,17 +4,18 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Issue extends Model
 {
     protected $fillable = [
+        'ordering',
         'title',
         'description',
         'state',
-        'user_id'
+        'project_id'
     ];
 
-    public function issues()
+    public function project()
     {
-        return $this->hasMany('App\Model\Issue');
+        return $this->belongsTo('App\Model\Project');
     }
 }
