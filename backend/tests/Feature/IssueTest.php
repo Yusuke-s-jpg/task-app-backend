@@ -118,7 +118,7 @@ class IssueTest extends TestCase
         $params = [
             'title' => 'testTitle',
             'description' => 'testDescription',
-            'state' => 'progress',
+            'state' => 'wip',
             'project_id' => 1
         ];
         $response = $this->json('POST', 'api/issues', $params);
@@ -127,7 +127,7 @@ class IssueTest extends TestCase
         $this->assertDatabaseHas('issues', [
                     'title' => 'testTitle',
                     'description' => 'testDescription',
-                    'state' => 'progress',
+                    'state' => 'wip',
                     'project_id' => 1
                  ]);
 
@@ -152,7 +152,7 @@ class IssueTest extends TestCase
         $params = [
             'title' => 'testTitle',
             'description' => 'testDescription',
-            'state' => 'progress',
+            'state' => 'wip',
             'project_id' => 1
         ];
         $response = $this->json('POST', 'api/issues', $params);
@@ -163,7 +163,7 @@ class IssueTest extends TestCase
         $params = [
             'title' => 'updatedTitle',
             'description' => 'updatedDescription',
-            'state' => 'progress',
+            'state' => 'wip',
             'project_id' => 1
         ];
         $response = $this->json('PUT', "api/issues/{$issue->id}", $params);
@@ -172,13 +172,13 @@ class IssueTest extends TestCase
         $this->assertDatabaseHas('issues', [
                 'title' => 'updatedTitle',
                 'description' => 'updatedDescription',
-                'state' => 'progress',
+                'state' => 'wip',
                 'project_id' => 1
              ])
              ->assertDatabaseMissing('issues', [
                 'title' => 'testTitle',
                 'description' => 'testDescription',
-                'state' => 'progress',
+                'state' => 'wip',
                 'project_id' => 1
              ]);
 
@@ -199,7 +199,7 @@ class IssueTest extends TestCase
         $params = [
             'title' => 'testTitle',
             'description' => 'testDescription',
-            'state' => 'progress',
+            'state' => 'wip',
             'project_id' => 1
         ];
         $response = $this->json('POST', 'api/issues', $params);
@@ -211,7 +211,7 @@ class IssueTest extends TestCase
         $params = [
             'title' => 'updatedTitle',
             'description' => 'updatedDescription',
-            'state' => 'progress',
+            'state' => 'wip',
             'project_id' => 1
         ];
         $response = $this->json('PUT', "api/issues/{$issue_id}", $params);
@@ -220,13 +220,13 @@ class IssueTest extends TestCase
         $this->assertDatabaseHas('issues', [
                 'title' => 'testTitle',
                 'description' => 'testDescription',
-                'state' => 'progress',
+                'state' => 'wip',
                 'project_id' => 1
              ])
              ->assertDatabaseMissing('issues', [
                 'title' => 'updatedTitle',
                 'description' => 'updatedDescription',
-                'state' => 'progress',
+                'state' => 'wip',
                 'project_id' => 1
              ]);
 
