@@ -12,4 +12,9 @@ class Project extends Model
         'state',
         'user_id'
     ];
+
+    public function issues()
+    {
+        return $this->hasMany('App\Model\Issue');
+    }
 }

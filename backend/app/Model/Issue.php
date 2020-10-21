@@ -13,4 +13,9 @@ class Issue extends Model
         'state',
         'project_id'
     ];
+
+    public function project()
+    {
+        return $this->belongsTo('App\Model\Project');
+    }
 }
