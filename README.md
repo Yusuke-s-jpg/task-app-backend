@@ -40,9 +40,9 @@ Build laravel development environment with docker-compose.
   - [mysql](https://hub.docker.com/_/mysql):8.0
 
 ### テスト
-#### テストDBmigrate
+#### テストDB確認のためrootでログイン
 
-`docker-compose exec app php artisan migrate --database=test_db`
+`docker-compose exec db mysql -u root -psecret`
 
 #### テスト実行
 
