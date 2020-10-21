@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 $factory->define(Issue::class, function (Faker $faker) {
     return [
-        'ordering'    => Issue::count + 1,
+        'ordering'    => Issue::count() + 1,
         'title'       => $faker->title,
         'description' => $faker->realText,
         'state'       => 'wip',
